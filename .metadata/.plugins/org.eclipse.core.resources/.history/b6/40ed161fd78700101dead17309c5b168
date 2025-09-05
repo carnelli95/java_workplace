@@ -1,0 +1,24 @@
+package com.ruby.java.ch02데이터타입;
+
+import java.util.Scanner;
+
+public class 실습_2_4조건문논리연산 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		String st = sc.next();
+		
+		boolean isYoungFisher = false;
+		isYoungFisher = (st.equals("부산") && 20 < n && n < 30) ? true : false;
+		if(isYoungFisher == true) {
+			System.out.println("나이 = " + n + ", 도시 = " + st + ", 부산청년여부 = 참");
+		}
+		else {
+			System.out.println("나이 = " + n + ", 도시 = " + st + ", 부산청년여부 = 거짓");
+		}
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.ruby.java.ch04배열;
+
+import java.util.Random;
+
+public class MergeArray {
+	
+	int n = 5;
+	Random rd = new Random();
+	int[] a = new int[5];
+	int[] b = new int[5];
+	int[] c = new int[5];
+	int[] d = new int[5];
+	int[] e = new int[5];
+}
