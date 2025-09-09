@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.ScopedValue"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.awt.RadialGradientPaint"/>
     <fullyQualifiedTypeName name="javax.print.attribute.SetOfIntegerSyntax"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="edu.pnu.Phone"/>
+    <fullyQualifiedTypeName name="edu.pnu.MyTest01"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch05객체.Box"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch05객체.Car"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch06객체구현.Armor"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch06객체구현.Student"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch06객체구현.Count"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch06객체구현.Member1"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch05객체.실습_5_3_배열필드.Person"/>
 </qualifiedTypeNameHistroy>

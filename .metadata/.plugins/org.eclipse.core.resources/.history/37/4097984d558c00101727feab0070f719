@@ -1,0 +1,9 @@
+package edu.pnu;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		Phone phone = new Phone();
+	}
+}
