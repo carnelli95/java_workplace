@@ -17,6 +17,52 @@ class Student2 {
 	// 학생 수를 반환하는 정적 메소드getNumberStudents()
 
 	// 학생 정보를 출력하는 메소드 (예시용)
+	
+	String name;
+	int age;
+	String[] subjects;
+	int[] scores;
+	int count;
+	static int numberStudents = 0;
+	
+	// setter 메소드: setName(String name), setAge(int age),  setSubjects(String subjects[]), setScores(int scores[]), setCount(int num)
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String[] getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(String[] subjects) {
+		this.subjects = subjects;
+	}
+
+	public int[] getScores() {
+		return scores;
+	}
+
+	public void setScores(int[] scores) {
+		this.scores = scores;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	
 	public void printStudent() {
 		/*
 		 * 이름 = **, 나이 = **
