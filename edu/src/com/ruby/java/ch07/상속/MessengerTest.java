@@ -23,7 +23,7 @@ interface Messenger {
 	public static void getConnection() {//클래스의 static 메소드와 같다
 		System.out.println("네트워크 연결");
 	}
-	static void log() {//public, abstract, default, static 만 가능
+	private void log() {//public, abstract, default, static 만 가능
 		System.out.println("start job!");
 	}
 }

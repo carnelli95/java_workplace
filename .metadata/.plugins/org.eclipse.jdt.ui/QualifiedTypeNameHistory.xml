@@ -19,4 +19,8 @@
     <fullyQualifiedTypeName name="com.ruby.java.ch05객체.실습_5_3_배열필드.Person"/>
     <fullyQualifiedTypeName name="java.lang.Readable"/>
     <fullyQualifiedTypeName name="com.ruby.java.ch07.상속.Rectangle"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch07.상속.Employee2"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch08.Employee"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch07.상속.Item"/>
+    <fullyQualifiedTypeName name="com.ruby.java.ch07.상속.Customer2"/>
 </qualifiedTypeNameHistroy>

@@ -6,7 +6,7 @@ public class StaticMethodTest {
 	int num = 123;
 	public static void main(String[] args) {
 		StaticMethodTest.print1();
-		StaticMethodTest.print2();//오류
+//		StaticMethodTest.print2();//오류
 		print1();
 		//print2();//에러가 나는 이유를 알아야 한다
 		StaticMethodTest smt = new StaticMethodTest();
@@ -17,7 +17,7 @@ public class StaticMethodTest {
 
 	public static void print1() {
 		//클래스 메소드는 클래스 변수만 접근해야 한다
-		int num2 = num;//실행하기 전에 값이 있어여 하는데 num 값은 없다
+//		int num2 = num;//실행하기 전에 값이 있어여 하는데 num 값은 없다
 		System.out.println("hello ");
 		//System.out.println("hello " + num);//num 변수는 객체가 있어야 사용 가능하다
 	}

@@ -1,11 +1,11 @@
 package com.ruby.java.ch07.상속;
 
-interface Employee3 {
+interface Employee5 {
  void work();
  void attendMeeting();
 }
 
-class Manager2 implements Employee3 {
+class Manager2 implements Employee5 {
  @Override
  public void work() {
      System.out.println("매니저는 팀원들의 업무를 관리.");
@@ -16,7 +16,7 @@ class Manager2 implements Employee3 {
  }
 }
 
-class Salesperson2 implements Employee3 {
+class Salesperson2 implements Employee5 {
  @Override
  public void work() {
      System.out.println("영업사원은 고객을 만나 상품을 판매.");
@@ -27,7 +27,7 @@ class Salesperson2 implements Employee3 {
  }
 }
 
-class Consultant2 implements Employee3 {
+class Consultant2 implements Employee5 {
  @Override
  public void work() {
      System.out.println("컨설턴트는 고객의 문제 해결.");
@@ -40,9 +40,9 @@ class Consultant2 implements Employee3 {
 
 public class 인터페이스구현 {
  public static void main(String[] args) {
-     Employee3 manager = new Manager2();
-     Employee3 salesperson = new Salesperson2();
-     Employee3 consultant = new Consultant2();
+     Employee5 manager = new Manager2();
+     Employee5 salesperson = new Salesperson2();
+     Employee5 consultant = new Consultant2();
 
 
      System.out.println("--- 직원들의 역할 수행 ---");

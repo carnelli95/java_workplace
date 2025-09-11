@@ -23,7 +23,6 @@ public class CountTest { //file 이름과 같아야 한다
 	}
 	public static void main(String[] args) {
 		Count.print1();
-		print1();
 		Count.totalCount++;//클래스 필드의 사용 235페이지 (2)클래스 필드 사용
 		
 		//Count.count++;//오류 발생

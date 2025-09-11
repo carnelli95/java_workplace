@@ -10,7 +10,7 @@ class Student1 {
 	String[] subjects;
 	int[] scores;
 	int count;
-	static int numberStudents = 0;
+	static int studentCount = 0;
 	
 	// setter 메소드: setName(String name), setAge(int age),  setSubjects(String subjects[]), setScores(int scores[]), setCount(int num)
 	public String getName() {
@@ -53,9 +53,9 @@ class Student1 {
 	// 학생 수를 반환하는 정적 메소드
 	public static int getCount(Student1[] students) {
 		for(Student1 s : students) {
-			numberStudents ++;
+			studentCount ++;
 		}
-		return numberStudents;
+		return studentCount;
 	}
 
 	// 학생 정보를 출력하는 메소드 (예시용)

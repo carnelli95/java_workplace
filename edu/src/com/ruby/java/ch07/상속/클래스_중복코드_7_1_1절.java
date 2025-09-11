@@ -6,7 +6,7 @@ package com.ruby.java.ch07.상속;
  * 271페이지 문단: 중복 제거 필요성 설명
  */
 
-/*class Employee {
+class Employee1 {
 	private String name;
 	private int age;
 	private String dept;
@@ -30,7 +30,7 @@ package com.ruby.java.ch07.상속;
 	}
 }
 
-class Professor {
+class Professor1 {
 	private String name;
 	private int age;
 	private String subject;
@@ -54,7 +54,7 @@ class Professor {
 	}
 }
 
-class Student {
+class Student1 {
 	private String name;
 	private int age;
 	private String major;
@@ -80,9 +80,9 @@ class Student {
 
 public class 클래스_중복코드_7_1_1절 {
 	public static void main(String[] args) {
-	    Employee e = new Employee();
-		Professor p = new Professor();
-		Student s = new Student();
+	    Employee1 e = new Employee1();
+		Professor1 p = new Professor1();
+		Student1 s = new Student1();
 		e.setName("오정임");
 		e.setAge(47);
 		e.setDept("입학처");
@@ -99,4 +99,4 @@ public class 클래스_중복코드_7_1_1절 {
 		System.out.println(p.toString());
 		System.out.println(s.toString());
 	}
-} */
+} 

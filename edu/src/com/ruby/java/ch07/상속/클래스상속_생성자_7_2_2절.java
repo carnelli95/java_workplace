@@ -1,10 +1,10 @@
 package com.ruby.java.ch07.상속;
 
-class Person {
+class Person4 {
 	private String name;
 	private int age;
 
-	public Person() { // default 생성자
+	public Person4() { // default 생성자
 		System.out.println("Person 생성자 실행!");
 	}
 
@@ -12,7 +12,7 @@ class Person {
 	 * 297페이지 (5) 생성자 오류
 	 */
 
-	public Person(String name, int age) {
+	public Person4(String name, int age) {
 		this.name = name;
 		this.age = age;
 		System.out.println("Person(name, age) 생성자 실행!");
@@ -39,16 +39,16 @@ class Person {
 	}
 }
 
-class Employee extends Person {
+class Employee4 extends Person4 {
 	private String dept;
 
-	public Employee() {
+	public Employee4() {
 		// super(); // 컴파일러가 자동으로 삽입함
 		System.out.println("Employee 생성자 실행!");
 		// super();
 	}
 
-	public Employee(String name, int age, String dept) {
+	public Employee4(String name, int age, String dept) {
 //		this.name = name;
 //		super.setName(name);
 //		super.setAge(age); 
@@ -75,14 +75,14 @@ class Employee extends Person {
 	}
 }
 
-class Professor extends Person {
+class Professor4 extends Person4 {
 	private String subject;
 
-	public Professor() {
+	public Professor4() {
 		System.out.println("Professor 생성자 실행!");
 	}
 
-	public Professor(String name, int age, String subject) {
+	public Professor4(String name, int age, String subject) {
 //		  name = name; 
 //		  this.name = name; 
 //		  super.setName(name); 
@@ -106,14 +106,14 @@ class Professor extends Person {
 	}
 }
 
-class Student extends Person {
+class Student4 extends Person4 {
 	private String major;
 
-	public Student() {
+	public Student4() {
 		System.out.println("Student 생성자 실행!");
 	}
 
-	public Student(String name, int age, String major) { 
+	public Student4(String name, int age, String major) { 
 //		name = name; 
 //		this.name = name; 
 //		super.setName(name); 
@@ -138,7 +138,7 @@ class Student extends Person {
 
 public class 클래스상속_생성자_7_2_2절 {
 	public static void main(String[] args) {
-		Employee e = new Employee();
+		Employee4 e = new Employee4();
 		/*
 		 * 자바에서 하위 클래스 생성자 실행 전에는 반드시 상위 클래스 생성자가 먼저 호출
 		 * 
@@ -148,8 +148,8 @@ public class 클래스상속_생성자_7_2_2절 {
 		 * public Employee() { super(); // Person() 호출 ← 컴파일러가 자동 추가
 		 * System.out.println("Employee 생성자 실행!"); }
 		 */
-		Professor p = new Professor();
-		Student s = new Student();
+		Professor4 p = new Professor4();
+		Student4 s = new Student4();
 		/*
 		 * Employee e1 = new Employee("오정임",47, "입학처");//에러 발생 Professor p1 = new
 		 * Professor("김푸름",52,"빅데이터"); Student s1 = new Student("김유빈",20,"컴퓨터");

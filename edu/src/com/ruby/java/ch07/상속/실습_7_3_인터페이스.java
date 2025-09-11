@@ -34,12 +34,17 @@ abstract class Item3 {
 	
 
 	public void reduceStock(int quantity) {
-
+		
+		stockQuantity -= quantity;
 	}
 }
 
 //Electronics 클래스: Item 클래스 상속
 class Electronics3 extends Item3 {
+	public Electronics3(String string, int i, int j, int k) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private int madeYear;
 
 	// 생성자
@@ -48,6 +53,10 @@ class Electronics3 extends Item3 {
 
 //Clothing 클래스: Item 클래스 상속
 class Clothing3 extends Item3 {
+	public Clothing3(String string, int i, int j, int k) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private int size;
 
 	// 생성자
@@ -66,12 +75,20 @@ class Order3 extends SeasonalDiscount {
 	// 생성자
 	
 	
-	public void addItem(Item3 item, int quantity, String date) {
+	public Order3(Customer3 regularCustomer, double seasonalDiscountRate) {
+		// TODO Auto-generated constructor stub
+	}
 
+	public void addItem(Item3 item, int quantity, String date) {
+		items[count] = item;
+		quantities[count] = quantity;
+		count++;
 	}
 
 	private double calculateTotal() {
-		return 0.0;
+		double total;
+		
+		return total;
 	}
 
 	public void printOrderSummary() {
@@ -109,6 +126,10 @@ class RegularCustomer3 extends Customer3 {
 	// 생성자
 	
 
+	public RegularCustomer3(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	double applyDiscount(double totalAmount) {
 		// 일반 고객은 추가 할인 없음
@@ -127,6 +148,10 @@ class PremiumCustomer3 extends Customer3 {
 
 	// 생성자
 	
+	public PremiumCustomer3(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	double applyDiscount(double totalAmount) {
 		return 0.0;
@@ -140,7 +165,7 @@ class PremiumCustomer3 extends Customer3 {
 
 public class 실습_7_3_인터페이스 {
 	public static void main(String[] args) {
-/*
+
 		// 배열에 전자제품과 의류패션 객체 추가
 		Item3 note = new Electronics3("노트북", 1500, 24, 23);
 		Item3 clothe = new Clothing3("티셔츠", 50, 50, 95);
@@ -150,7 +175,8 @@ public class 실습_7_3_인터페이스 {
 		Customer3 premiumCustomer = new PremiumCustomer3("강감찬");
 
 		// 주문 생성 및 계산 (RegularCustomer)
-		Order3 regularOrder = new Order3(regularCustomer);
+		double seasonalDiscountRate = 0.01;
+		Order3 regularOrder = new Order3(regularCustomer, seasonalDiscountRate);
 		regularOrder.addItem(note, 1, "240901");
 		regularOrder.addItem(clothe, 2, "240902");
 
@@ -158,13 +184,12 @@ public class 실습_7_3_인터페이스 {
 		regularOrder.printDiscountDetails(); // 할인된 내역 출력
 
 		// 주문 생성 및 계산 (PremiumCustomer)
-		Order3 premiumOrder = new Order3(premiumCustomer);
+		Order3 premiumOrder = new Order3(premiumCustomer, seasonalDiscountRate);
 		premiumOrder.addItem(note, 1, "240901");
 		premiumOrder.addItem(clothe, 2, "240903");
 
 		premiumOrder.printOrderSummary();
 		premiumOrder.printDiscountDetails(); // 할인된 내역 출력
-*/
 		/*
 		 * 출력 결과 예시
 		 * 
@@ -175,6 +200,8 @@ public class 실습_7_3_인터페이스 {
 		---------------------------------------------
 		할인율:0.03
 		할인가격:1552.0
+		시즌할인율:0.01
+		시즌할인:1536.48
 		=============================================
 		고객명:강감찬
 		제품명:노트북, 단가:1500.0, 수량:1, 가격:1500.0
@@ -183,9 +210,10 @@ public class 실습_7_3_인터페이스 {
 		---------------------------------------------
 		할인율:0.1
 		할인가격:1440.0
-		시즌할인율:0.05
-		시즌할인:1368.0
+		시즌할인율:0.01
+		시즌할인:1425.6
 		=============================================
+
 		 */
 	}
 }

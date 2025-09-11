@@ -1,6 +1,6 @@
 package com.ruby.java.ch07.상속;
 
-/*class Person {
+class Person3 {
 	private String name;
 	private int age;
 	public String getName() {
@@ -20,7 +20,7 @@ package com.ruby.java.ch07.상속;
 	}
 }
 
-class Employee extends Person {
+class Employee3 extends Person3 {
 	private String dept;
 	public String getDept() {
 		return dept;
@@ -36,7 +36,7 @@ class Employee extends Person {
 		return super.toString()+ ", "+ dept;
 	}
 }
-class Professor extends Person {
+class Professor3 extends Person3 {
 	private String subject;
 	public String getSubject() {
 		return subject;
@@ -50,7 +50,7 @@ class Professor extends Person {
 		return super.toString()+ ", "+ subject;
 	}
 }
-class Student extends Person {
+class Student3 extends Person3 {
 	private String major;
 	public String getMajor() {
 		return major;
@@ -66,47 +66,15 @@ class Student extends Person {
 		return super.toString() + major;
 	}
 }
-
-	
-	*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 public class 클래스_메소드오버라이딩_7_2_1절 {
 	public static void main(String[] args) {
 		
 		System.out.println();
-		Employee e = new Employee();
-		Professor p = new Professor();
-		Student s = new Student();
+		Employee3 e = new Employee3();
+		Professor3 p = new Professor3();
+		Student3 s = new Student3();
 
 		e.setName("오정임");
 		e.setAge(47);
