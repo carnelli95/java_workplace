@@ -76,7 +76,7 @@ class Order {
 		// TODO Auto-generated constructor stub
 		this.customer = boy;
 		items = new Item[i];
-//		quantities = new int[i];
+		quantities = new int[i];
 		this.count = 0;
 	}
 
@@ -90,17 +90,18 @@ class Order {
 	// 총액 계산 메소드
 	private double calculateTotal() {
 		double total = 0.0;
-		for(int i = 0; i < items.length; i++) {
+		for(int i = 0; i < count; i++) {
 			total += (items[i].getPrice() * quantities[i]);
 		}
 		return total;
 	}
+	
+	
 
     // 주문 요약 출력 메소드
 	public void printOrderSummary() {
-		int orderSum = this.items.length;
 		System.out.println(customer.toString() + ", 주문일 : " + orderDates);
-		for(int i = 0; i < orderSum; i++) {
+		for(int i = 0; i < this.count; i++) {
 			System.out.println("제품명 : " + items[i].getName() + ", 단가 : " + items[i].getPrice() + ", 개수 : " + quantities[i] + " ==> 가격 : " + items[i].getPrice() * quantities[i]);
 //			제품명 : 노트북, 단가 : 1200.0, 개수 : 1 ==> 가격 : 1200.0
 		}

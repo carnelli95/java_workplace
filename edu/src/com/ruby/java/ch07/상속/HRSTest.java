@@ -27,7 +27,7 @@ class DomesticSalesman extends Salesman {	// concrete class
 //		salesQty = qty;
 		domesticSalesQty = dqty;
 	}
-	
+
 	public void calcBonus() {
 		System.out.println("DomesticSalesman 보너스 = 기본급* 0.01");
 	}
@@ -59,10 +59,10 @@ public class HRSTest {
 //		Employee2 e2 = new Employee2();
 //		Salesman s = new Salesman();//추상 클래스
 //		DomesticSalesman s = new DomesticSalesman();
-		Employee6 s = new DomesticSalesman();
+//		Employee6 s = new DomesticSalesman();
 		Consultant c = new Consultant();
 		Manager m = new Manager();
-		s.calcSalary();
+//		s.calcSalary();
 		c.calcSalary();
 		m.calcSalary();
 

@@ -10,11 +10,10 @@ class SeasonalDiscount implements Discountable {
 	private double seasonalDiscountRate;
 
 	// 생성자
-	
-	
+	public SeasonalDiscount(double seasonalDiscountRate) {
+		this.seasonalDiscountRate = seasonalDiscountRate;
+	}
 	// Getter
-	
-	
 	@Override
 	public double getDiscountedPrice(double price) {
 		return 0.0;
@@ -27,40 +26,38 @@ abstract class Item3 {
 	private double price; // 제품 가격
 	private int stockQuantity; // 재고량
 
-	// 생성자
-	
+	public Item3(String name, double price, int stockQuantity) {
+		this.name = name;
+		this.price = price;
+		this.stockQuantity = stockQuantity;
+	}
 	
 	// Getter
 	
 
 	public void reduceStock(int quantity) {
-		
 		stockQuantity -= quantity;
 	}
 }
 
 //Electronics 클래스: Item 클래스 상속
 class Electronics3 extends Item3 {
-	public Electronics3(String string, int i, int j, int k) {
-		// TODO Auto-generated constructor stub
-	}
-
 	private int madeYear;
-
-	// 생성자
 	
+	public Electronics3(String string, double i, int j, int k) {
+		super(string, i, j);
+		this.madeYear = k;
+	}
 }
 
 //Clothing 클래스: Item 클래스 상속
 class Clothing3 extends Item3 {
-	public Clothing3(String string, int i, int j, int k) {
-		// TODO Auto-generated constructor stub
-	}
-
 	private int size;
-
-	// 생성자
-
+	
+	public Clothing3(String string, int i, int j, int k) {
+		super(string, i, j);
+		this.size = size;
+	}
 }
 
 //Order 클래스
@@ -74,9 +71,11 @@ class Order3 extends SeasonalDiscount {
 
 	// 생성자
 	
-	
 	public Order3(Customer3 regularCustomer, double seasonalDiscountRate) {
-		// TODO Auto-generated constructor stub
+		this.customer = regularCustomer;
+		items = new Item3[count];
+		quantities = new int[count];
+		this.count = 0;
 	}
 
 	public void addItem(Item3 item, int quantity, String date) {
@@ -108,7 +107,6 @@ abstract class Customer3 {
 	private String name;
 
 	// 생성자
-	
 
 	@Override
 	public String toString() {

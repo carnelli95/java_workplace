@@ -75,7 +75,7 @@ class Student3 {
 	}
 
 	// 학생 정보를 출력하는 메소드 (예시용)
-	public static void printStudentInfo(Student3[] students) {
+	public void printStudentInfo(Student3[] students) {
 		/*
 		 * 이름 = **, 나이 = ** 과목1 = **, 점수1 = **, 통과여부=pass 과목2 = **, 점수2 = **, 통과여부=fail
 		 * ... 등으로 출력
@@ -150,7 +150,7 @@ public class 실습_6_3정적메소드 {
 		
 
 		// 학생 정보 출력 (예시)
-		printStudentInfo(students);
+//		Student3.printStudentInfo(students);
 
 		// 각 학생의 성적 테이블 출력
 		Student3.printAllStudents(students);

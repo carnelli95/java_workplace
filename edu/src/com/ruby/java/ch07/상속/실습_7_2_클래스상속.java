@@ -8,31 +8,22 @@ class Item2 {
 
 	// 생성자
 	public Item2(String name, double price, int stockQuantity) {
-		super();
 		this.name = name;
 		this.price = price;
 		this.stockQuantity = stockQuantity;
 	}
-	
-	public Item2() {
-		// TODO Auto-generated constructor stub
+
+	@Override
+	public String toString() {
+		return "이름 : " + this.name + ", 가격 : " + price + "주문수량 : " + stockQuantity;
 	}
 
-	// Getter
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
 	}
 
 	public int getStockQuantity() {
@@ -43,19 +34,16 @@ class Item2 {
 		this.stockQuantity = stockQuantity;
 	}
 
-	public void increaseStock(int quantity) {
-		stockQuantity += quantity;
+	public void setPrice(double price) {
+		this.price = price;
 	}
-	
-	public void reduceStock(int quantity) {
-		stockQuantity -= quantity;
+
+	public double getPrice() {
+		// TODO Auto-generated method stub
+		return price;
 	}
 
 	
-	@Override
-	public String toString() {
-		return null;
-	}
 }
 
 //Electronics 클래스 (Item 클래스를 상속)
@@ -63,18 +51,15 @@ class Electronics extends Item2 {
 	private int warranty; // 제품 보증 기간
 
 	// 생성자
-	public Electronics(int warranty) {
-		super();
-		this.warranty = warranty;
-	}
 	
 	public Electronics(String string, double d, int i, int j) {
-		// TODO Auto-generated constructor stub
+		super(string, d, i);
+		warranty = j;
 	}
 
 	@Override
 	public String toString() {
-		return null;
+		return super.toString() + "제품 보증 기간 : " + warranty;
 	}
 	
 }
@@ -85,19 +70,16 @@ class Clothing extends Item2 {
 	private String color;
 
 	// 생성자
-	public Clothing(String size, String color) {
-		super();
-		this.size = size;
-		this.color = color;
-	}
 	
 	public Clothing(String string, double d, int i, String string2, String string3) {
-		// TODO Auto-generated constructor stub
+		super(string, d, i);
+		this.size = string2;
+		this.color = string3;
 	}
 
 	@Override
 	public String toString() {
-		return null;
+		return super.toString() + "사이즈 : " + this.size + ", 색상 : " + this.color;
 	}
 
 }
@@ -108,16 +90,24 @@ abstract class Customer2 {
 	private String city;
 	private int age;
 
+	public Customer2(String name, String city2, int age2) {
+		// TODO Auto-generated constructor stub
+		this.cname = name;
+		this.city = city2;
+		this.age = age2;
+	}
+
 	// 생성자
 	
-	
+
 	@Override
 	public String toString() {
-		return null;
+		return "이름 : " +cname+  "도시 : " +this.city +  "나이 : " + this.age;
 	}
 
 	abstract double getDiscountRate();
 	abstract double applyDiscount(double totalAmount);
+
 }
 
 //RegularCustomer 클래스: Customer 클래스를 상속받음
@@ -125,13 +115,13 @@ class RegularCustomer extends Customer2 {
 	static final double REGULARDISCOUNT_RATE = 0.03;
 
 	public RegularCustomer(String name, String city, int age) {
-
+		super(name, city, age);
 	}
 
 	@Override
 	double applyDiscount(double totalAmount) {
 		// 일반 고객 할인 적용
-		totalAmount *= REGULARDISCOUNT_RATE;
+		totalAmount = - (totalAmount * REGULARDISCOUNT_RATE);
 		return totalAmount;
 	}
 
@@ -147,16 +137,17 @@ class PremiumCustomer extends Customer2 {
 
 	public PremiumCustomer(String string, String string2, int i) {
 		// TODO Auto-generated constructor stub
+		super(string, string2, i);
 	}
 
 	@Override
-	double applyDiscount(double totalAmount) {
-		totalAmount *= PREMIUMDISCOUNT_RATE;
+	public double applyDiscount(double totalAmount) {
+		totalAmount = -(totalAmount * PREMIUMDISCOUNT_RATE);
 		return totalAmount;
 	}
 	
 	@Override
-	double getDiscountRate() {
+	public double getDiscountRate() {
 		return PREMIUMDISCOUNT_RATE;
 	}
 }
@@ -173,8 +164,10 @@ class Order2 {
 	
 	public Order2(Customer2 customer, int i) {
 		// TODO Auto-generated constructor stub
-		
-		
+		this.customer = customer;
+		items = new Item2[i];
+		quantities = new int[i];
+		this.itemCount = 0;
 	}
 
 
@@ -186,20 +179,28 @@ class Order2 {
 
 	private double calculateTotal() {
 		double total = 0.0;
-		for(int i = 0; i < items.length; i++) {
+		for(int i = 0; i < itemCount; i++) {
 			total += (items[i].getPrice() * quantities[i]);
 		}
 		return total;
 	}
 
 	private double calculateDiscountedTotal() {
-		return 
+		double totalAmount = calculateTotal();
+		return customer.applyDiscount(totalAmount);
 	}
 
 	public void printOrderSummary() {
 		/*
 		 * 할인된 가격의 합계 출력 할인 금액 합계 출력
 		 */
+		System.out.println("고객정보 : " + customer.toString());
+		for(int i = 0; i < itemCount; i++) {
+			System.out.println("제품명 : " + items[i].getName() + ", 단가 : " + items[i].getPrice() + ", 개수 : " + items[i].getStockQuantity() + " => 가격 : " + items[i].getPrice());
+		}
+		System.out.println("총액 : " + calculateTotal() + "할인율 : " + customer.getDiscountRate() + "할인금액 : " + calculateDiscountedTotal());
+		System.out.println("할인 후 총액 : " + String.format("%.1f",(calculateTotal() - calculateDiscountedTotal())));
+		System.out.println("-".repeat(25));
 		
 	}
 	
