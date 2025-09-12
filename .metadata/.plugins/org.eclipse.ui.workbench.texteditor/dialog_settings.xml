@@ -4,6 +4,8 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="false"/>
 		<list key="findhistory">
+			<item value="return"/>
+			<item value="static"/>
 			<item value="get"/>
 			<item value="emplo"/>
 			<item value="log"/>

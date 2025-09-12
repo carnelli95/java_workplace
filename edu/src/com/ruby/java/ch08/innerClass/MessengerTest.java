@@ -4,7 +4,7 @@ package com.ruby.java.ch08.innerClass;
  */
 
 interface Messenger {
-	String getMessage();
+	String getMessage(); // 추상 메서드
 	void setMessage(String msg );
 }
 class GMessenger implements Messenger {
@@ -22,7 +22,7 @@ class GMessenger implements Messenger {
 }
 public class MessengerTest {
 	public static void main(String[] args) {
-		GMessenger g = new GMessenger();
+		Messenger g = new GMessenger();
 		g.getMessage();
 		g.setMessage("hello");
 		g.Change();

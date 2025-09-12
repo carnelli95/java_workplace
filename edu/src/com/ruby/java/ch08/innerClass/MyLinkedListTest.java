@@ -4,6 +4,9 @@ package com.ruby.java.ch08.innerClass;
  */
 class MyLinkedList {
 	private Node head=null;
+	public MyLinkedList() {
+		
+	}
 	
 	private class Node {
 		private String data;
@@ -25,7 +28,6 @@ class MyLinkedList {
 				next = next.link;
 			}
 			next.link = newNode;
-
 		}
 	}
 

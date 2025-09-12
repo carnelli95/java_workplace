@@ -144,6 +144,7 @@ class Order extends SeasonalDiscount {
 				quantities[count] = quantity;
 				orderDates[count] = date;
 				count++;
+				item.reduceStock(quantity);
 			} 
 			else {
 				System.out.println("재고가 부족합니다");
